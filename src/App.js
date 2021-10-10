@@ -6,9 +6,10 @@ import Tasks from "./components/Tasks"
 
 function App() {
   const [showAddTask,setShowAddTask]=useState(false);
-  const [tasks,setTasks]=useState([])
+  const [tasks,setTasks]=useState([]);
   const addTask=(newTask)=>{
     setTasks([...tasks,newTask])
+    setShowAddTask(!showAddTask)
   }
   const onDelete=(id)=>{
     setTasks(tasks.filter((task)=>task.id!==id))

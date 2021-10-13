@@ -3,8 +3,12 @@ import { useState } from 'react';
 const Task = ({task,onDelete,onCompleted}) => {
     const [taskCompleted,setTaskCompleted]=useState(false);
     return (
-        <div onDoubleClick={()=>{setTaskCompleted(!taskCompleted)}} style={taskCompleted?{textDecoration:'line-through'}:{textDecoration:'none'}}>
-            <h3>{task.text} <VscTrash onClick={()=>onDelete(task.id)} style={{color:'red',cursor:'pointer'}}/></h3>
+        <div className="font-bold shadow-xl max-w-xs max-h-xl rounded bg-gray-300 items-center"
+        onDoubleClick={()=>{setTaskCompleted(!taskCompleted)}} style={taskCompleted?{textDecoration:'line-through'}:{textDecoration:'none'}}>
+            <div className='flex space-x-4'>
+                <h3 >{task.text}</h3>
+                <VscTrash  className="" onClick={()=>onDelete(task.id)} style={{color:'red',cursor:'pointer'}}/>
+            </div>
             <p>{task.date}</p>
         </div>
     )

@@ -17,13 +17,15 @@ function App() {
 
   return (
     <div className="App">
-      <Header onAdd={()=>setShowAddTask(!showAddTask)} showTask={showAddTask}/>
-      {showAddTask && <Form onSave={addTask}/>}
-      {
-        tasks.length>0 ? <Tasks tasks={tasks} onDelete={onDelete} />
-        :
-        'No tasks to show !'
-      }
+      <div className="container mx-auto my-auto max-w-md max-h-lg ">
+        <Header  onAdd={()=>setShowAddTask(!showAddTask)} showTask={showAddTask}/>
+        {showAddTask && <Form onSave={addTask}/>}
+        {
+          tasks.length>0 ? <Tasks className="space-y-5" tasks={tasks} onDelete={onDelete} />
+          :
+          'No tasks to show !'
+        }
+      </div>
     </div>
   );
 }

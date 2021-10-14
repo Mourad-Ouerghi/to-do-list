@@ -1,9 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.header{
-  display: flex;
-  flex-direction: row;
+
+.button{
+  margin-left: 5em;
+}
+.title{
+  margin-left: 11em;
+  margin-top:10px;
 }
 #formContainer{
   display: flex;

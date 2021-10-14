@@ -16,9 +16,9 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div className="container mx-auto my-auto max-w-md max-h-lg ">
-        <Header  onAdd={()=>setShowAddTask(!showAddTask)} showTask={showAddTask}/>
+    <div className="App ">
+      <div className="container mx-auto my-5 max-w-md max-h-lg bg-gradient-to-r from-green-200 to-blue-300 rounded-lg shadow-2xl ">
+        <Header onAdd={()=>setShowAddTask(!showAddTask)} showTask={showAddTask}/>
         {showAddTask && <Form onSave={addTask}/>}
         {
           tasks.length>0 ? <Tasks className="space-y-5" tasks={tasks} onDelete={onDelete} />
